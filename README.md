@@ -15,7 +15,7 @@ Python 3.11
 4. Install the required dependencies:
 
    '''bash
-   pip install -r requirement.txt
+   pip install -r requirements.txt
 
 5. Make sure the dataset file (Food_Delivery_Times) is in the correct project location.
 6. Run the training script:
