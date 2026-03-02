@@ -28,6 +28,12 @@ Python 3.11
    '''bash
    python predict.py
 
+If You wanna try the **API**, then:
+
+8. Run the api script:
+
+   '''bash
+   
 
 
 
