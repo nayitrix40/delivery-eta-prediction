@@ -21,7 +21,9 @@ In short, generalization should be validated with local data, not assumed.
 ## GenAI Disclosure
 
 ### Generative AI tools are a great resource that can facilitate development, what parts of this project did you use GenAI tools for? How did you validate or modify their output?
+I used GenAI tools as a support resource in several parts of the project. In the SQL, I used them to quickly explore useful functions and improve the structure of some queries, especially the more complex one related to trend anaysis. In the modeling section, I used GenAI to help structure the preprocessing pipeline and test additional models for comparison. I also used it to organize the structure of the written reports in order that I could have a better view to response.
 
+I validated and modifed the outputs by running the queries
 
 ## Your Signature Insight
 
