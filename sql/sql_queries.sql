@@ -143,8 +143,8 @@ Order by [Total Orders Value] DESC;
 With monthly_avg as (
    Select dp.delivery_person_id,
           dp.name,
-		  DATEFROMPARTS(Year(d.order_placed_at), Month(d.order_placed_at), 1) as delivery_month,
-          AVG(d.delivery_time_min) as avg_delivery_time
+		  DATEFROMPARTS(Year(d.order_placed_at), Month(d.order_placed_at), 1) as 'delivery_month',
+          AVG(d.delivery_time_min) as 'avg_delivery_time'
    From delivery_persons as dp
    INNER JOIN deliveries as d
        ON dp.delivery_person_id = d.delivery_person_id
@@ -158,8 +158,8 @@ ranked_months as (
           name,
 		  delivery_month,
 		  avg_delivery_time,
-		  ROW_NUMBER() OVER (PARTITION BY delivery_person_id Order by [Delivery Month] ASC) as first_month_rank,
-		  ROW_NUMBER() OVER (PARTITION BY delivery_person_id Order by [Delivery Month] DESC) as last_month_rank
+		  ROW_NUMBER() OVER (PARTITION BY delivery_person_id Order by [delivery_month] ASC) as first_month_rank,
+		  ROW_NUMBER() OVER (PARTITION BY delivery_person_id Order by [delivery_month] DESC) as last_month_rank
    From monthly_avg
 )
 Select name as 'Name',
@@ -175,5 +175,6 @@ Having MAX(CASE WHEN last_month_rank = 1 THEN avg_delivery_time END) >
 
 This took more steps, as I first calculated the monthly average per delivery person,
 then compared their first month with the last available month to see if there was an increase in the average time.
+
 
 */
