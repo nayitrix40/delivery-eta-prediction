@@ -55,6 +55,3 @@ The following assumptions were made ro support modeling:
 2. **Identifier exclution**: 'Order_ID' does not provide predictive value and can be removed.
 3. **Handling missing value**
    - Numerical missing values (e.g., 'Courier_Experience_yrs') can be imputed using the **most frequent category**
-
-## Conclusion
-The dataset is good for building a delivery time prediction model. Variables such as **traffic level, distance, weather** are expected to be meaningful predictor of delivery durations. The identified missing values are limited and manageable through standard preprocessing methods, and supporting the development of a reliable regression pipeline.
