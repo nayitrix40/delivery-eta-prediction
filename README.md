@@ -23,7 +23,7 @@ Python 3.11
    '''bash
    python train.py
 
-7. After the model is trained, run the prediction script:
+7. After the model is trained, You'll see a .joblib file created, then run the prediction script:
 
    '''bash
    python predict.py
