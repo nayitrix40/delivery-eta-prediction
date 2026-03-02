@@ -1,10 +1,10 @@
 # delivery-eta-prediction
 
-## Delivery Time Prediction Model by Nayim Rodriguez
+## Delivery Time Prediction Model
 
 This project trains a machine learning model to predict food delivery time based on operational and environmental factors.
 
-## Recommended Pyhton Version 
+## Recommended Python Version 
 Python 3.11
 
 ## Setup Instructions
@@ -14,34 +14,38 @@ Python 3.11
 3. Create and activate a virtual environment.
 4. Install the required dependencies:
 
-   '''bash
+   ```bash
    pip install -r requirements.txt
 
-5. Make sure the dataset file (Food_Delivery_Times) is in the correct project location.
+5. Make sure the dataset file (Food_Delivery_Times) is inside the model_pipeline/ folder.
 6. Run the training script:
 
-   '''bash
-   python train.py
+   ```bash
+   python model_pipeline/train.py
 
 7. After the model is trained, You'll see a .joblib file created, then run the prediction script:
 
-   '''bash
-   python predict.py
+   ```bash
+   python model_pipeline/predict.py
 
-### If You wanna try the **API**, then:
+## API Prototype:
 
-8. Run the api script:
+1. Make sure the trained model file (best_model.joblib) already exists.
+2. Open a terminal in the project folder.
+3. Run the api with:
 
-   '''bash
-   .\.venv\Scripts\python.exe -m uvicorn api:app --reload
+   ```bash
+   python -m uvicorn model_pipeline.api:app --reload
 
-9. After the api is running, write in the URL of a browser (Chrome, Firefox) the next url below to open it in the local server:
+4. Open your browser and go to:
 
+    ```bash
     http://127.0.0.1:8000/docs
 
-10. You'll see the FastAPI open, 'Select the POST'
-11. Click "Try out"
-12. As this is a simple prototype, remember in the .json, write the right type for each feature:
+5. Use the /predict endpoint to send delivery details and receive the estiated delivery time.
+
+Click "Try out"
+As this is a simple prototype, remember in the .json, write the right type for each feature:
 - Distance_km: float
 - Weather: str
 - Traffic_Level: str
