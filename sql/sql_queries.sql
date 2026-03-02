@@ -125,15 +125,15 @@ Order by AVG(d.delivery_time_min) ASC;
 --Query 4:
 
 Select top 1 r.area as 'Restaurant Area',
-             SUM(o.order_value) as 'Total Orders Value'
+             SUM(o.order_value) as 'Total Order Value'
 From orders as o
 INNER JOIN restaurants as r
     ON o.restaurant_id = r.restaurant_id
 INNER JOIN deliveries as d
     ON o.delivery_id = d.delivery_id
-Where d.order_placed_at >= DATEADD(Month, -1, GETDATE())
+Where d.order_placed_at >= DATEADD(Month, -3, GETDATE())
 Group by r.area
-Order by [Total Orders Value] DESC;
+Order by [Total Order Value] DESC;
 
 --Query 5:
 
@@ -178,3 +178,4 @@ then compared their first month with the last available month to see if there wa
 
 
 */
+
