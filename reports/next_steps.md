@@ -1,9 +1,9 @@
 # Next Steps
 
-This prototype demonstrates that how the trained model could be exposed thorough a basic API endpoint for the obkective of ETA prediction:
+This prototype demonstrates how the trained model could be exposed thorough a basic API endpoint for the obkective of ETA prediction:
 
-## 1. Input validations improvements
-Although the API already validates basic data types, It needs more exceptions (preventing negatives, invalid categories for traffic, weather, and the others)
+## 1. Improve input validation
+Although the API already validates basic data types, additional checks should be added (preventing negatives, invalid categories for traffic, weather, and the others)
 
 ## 2. Better error handling
 The current version is intentionally lightweight. A production-ready service should clearer error messages and handle unexpected cases more robustly.
@@ -17,5 +17,5 @@ The model should be versioned so that updates can be tracked and rolled back if 
 ## 5. Retraining pipeline
 As delivery patterns change over the time, because It can happen, the model should be retrained periodically using more recent data.
 
-## 6. Integration with bnusiness systems
+## 6. Integration with business systems
 The API could be connected to internal dispatch, ordering, or customer-facing systems, so de ETA predictions can be generated at once during real delivery operations
